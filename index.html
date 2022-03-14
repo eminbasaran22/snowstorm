@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bazlama Cadde</title>    
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="topSlider" style="background: url(images/bg.jpg); background-position: center; background-size: cover; width: 100%; height: 100%; position: absolute;">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/snow.master.min.js"></script>
+   
+    <script>
+        window.onload = function() {
+            if ($(document).width() > 575) {
+                goAdorSnow('topSlider', 1, 'snow/images/wolken1.png', true, true, false, 0.4, 0.5, 0.4);
+            } else {
+                setWebpBgrImage("#snow_wrapper_mob", "images/snow/snow_bgr_mob.jpg", "images/snow/snow_bgr_mob.webp");
+                goAdorSnow('topSlider', 1, 'images/snow/wolken1.png', true, true, false, 0.4, 0.5, 0.4);
+            }
+            $(window).resize(function() {
+                if (this.resizeTO) clearTimeout(this.resizeTO);
+                this.resizeTO = setTimeout(function() {}, 500);
+            });
+        };
+    </script>
+</body>
+
+</html>
